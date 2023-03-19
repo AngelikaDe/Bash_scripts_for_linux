@@ -38,17 +38,17 @@ for var in "$@"
 do
     if [ $count -eq 0 ] || [ $count -eq 2 ] ; then
         case "$var" in
-        1) array_color+=( "$white" );
+        1) array_color+=( "$white" )
             ;;
-        2) array_color+=( "$red" );
+        2) array_color+=( "$red" )
             ;;
-        3) array_color+=( "$green" );
+        3) array_color+=( "$green" )
             ;;
-        4) array_color+=( "$blue" );
+        4) array_color+=( "$blue" )
             ;;
-        5) array_color+=( "$purple" );
+        5) array_color+=( "$purple" )
             ;;
-        6) array_color+=( "$black" );
+        6) array_color+=( "$black" )
             ;;
         *) echo "UNKNOWN OPTION ${var}. End. Try again"
             exit 0
