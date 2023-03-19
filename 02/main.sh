@@ -17,5 +17,5 @@ read -p "Do you want to save the information? [Y/N]" choice
 		# chmod 777 main_2.sh
 		#./main_2.sh 1> $file_name
 		exec 1> $file_name
-		echo "$(sh main_2.sh)" >&1
+		echo "$(sh info.sh)" >&1
 	fi
