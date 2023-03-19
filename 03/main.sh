@@ -22,7 +22,7 @@ exit 0
 fi
 for var in "$@"
 do
-    if ! [[ $var =~ '^[0-9]+$' ]] 
+    if ! [[ $var =~ '^[0-9]+$' ]];
     then
     echo "Please, enter all numbers and call the script again"
     exit 0
