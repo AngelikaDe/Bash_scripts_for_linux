@@ -10,6 +10,7 @@ white='\033[0;37m'
 red='\033[0;31m'
 green='\033[0;32m'
 purple='\033[0;35m'
+fin="\033[0m"
 
 white_back="\033[107m"
 red_back="\033[101m"
