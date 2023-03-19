@@ -76,7 +76,8 @@ do
     count=$((count+1))
 done
 # echo "${array_color[*]}"
-echo "${array_color[0]}${array_color[1]}HENLO $end=${array_color[2]}${array_color[3]} MY$end"
-# echo "${array_color[*]}"
-# echo "${BLACK}I like bash"
-echo "NOOOO it is the worst"
+# echo "${array_color[0]}${array_color[1]}HENLO $end=${array_color[2]}${array_color[3]} MY$end"
+# # echo "${array_color[*]}"
+# # echo "${BLACK}I like bash"
+# echo "NOOOO it is the worst"
+echo "$(sh info.sh)"
