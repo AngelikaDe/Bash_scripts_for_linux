@@ -80,4 +80,4 @@ done
 # # echo "${array_color[*]}"
 # # echo "${BLACK}I like bash"
 # echo "NOOOO it is the worst"
-echo "$(sh info.sh)"
+# echo "$(sh info.sh)"
