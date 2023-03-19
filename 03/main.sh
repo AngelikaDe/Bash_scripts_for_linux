@@ -1,5 +1,5 @@
 #!/bin/bash
-array_color=()
+#array_color=()
 fin="\033[0m"
 re='^[0-9]+$'
 black='\033[0;30m'
