@@ -1,7 +1,7 @@
 #!/bin/bash
 #array_color=()
 fin="\033[0m"
-re='^[0-9]+$'
+re="^[0-9]+$"
 black='\033[0;30m'
 white='\033[0;37m'
 red='\033[0;31m'
@@ -22,7 +22,7 @@ exit 0
 fi
 for var in "$@"
 do
-    if ! [ $var =~ $re ] ; then
+    if ! [[ $var =~ $re ]]; then
     echo "Please, enter all numbers and call the script again"
     exit 0
     fi
