@@ -2,7 +2,7 @@
 echo "HOSTNAME = $(hostname | awk '{print $0}')"
 echo "TIMEZONE = $(timedatectl | grep 'Time zone' | awk '{print $3 $4 $5}')"
 echo "USER = $(whoami | awk '{print $0}')"
-echo "OS = $(cat /etc/issue | awk '{print $0 $1 $2 $3}')"
+echo "OS = $(cat /etc/issue | awk '{print $1 $2 $3}')"
 echo "DATE = $(date '+%Y-%m-%d %H:%M:%S')"
 echo "UPTIME = $(uptime -p | awk '{print $2 $3 $4 $5}')"
 echo "UPTIME_SEC = $(cat /proc/uptime | awk '{print $1}')"
