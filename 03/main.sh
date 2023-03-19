@@ -1,5 +1,7 @@
 #!/bin/bash
-array_color=("0" "0" "0" "0")
+
+declare -a array_color=()
+count=0
 fin="\033[0m"
 re="^[0-9]+$"
 black='\033[0;30m'
@@ -14,6 +16,8 @@ green_back="\033[102m"
 blue_back="\033[104m"
 purple_back="\033[105m"
 black_back="\033[40m"
+source info.sh
+export $(cut -d= -f1 info.sh)
 
 if [ $# != 4 ] 
 then
@@ -76,7 +80,23 @@ do
     count=$((count+1))
 done
 # echo "${array_color[*]}"
-# echo "${array_color[0]}${array_color[1]}HENLO $end=${array_color[2]}${array_color[3]} MY$end"
+
+echo "${array_color[0]}${array_color[1]}HOSTNAME        = ${array_color[2]}${array_color[3]}$HOSTNAME"
+echo "${array_color[0]}${array_color[1]}TIMEZONE        = ${array_color[2]}${array_color[3]}$TIMEZONE"
+echo "${array_color[0]}${array_color[1]}OS              = ${array_color[2]}${array_color[3]}$OS"
+echo "${array_color[0]}${array_color[1]}DATE            = ${array_color[2]}${array_color[3]}$DATE"
+echo "${array_color[0]}${array_color[1]}UPTIME          = ${array_color[2]}${array_color[3]}$UPTIME"
+echo "${array_color[0]}${array_color[1]}UPTIME_SEC      = ${array_color[2]}${array_color[3]}$UPTIME_SEC"
+echo "${array_color[0]}${array_color[1]}IP              = ${array_color[2]}${array_color[3]}$IP"
+echo "${array_color[0]}${array_color[1]}MASK            = ${array_color[2]}${array_color[3]}$MASK"
+echo "${array_color[0]}${array_color[1]}GATEWAY         = ${array_color[2]}${array_color[3]}$GATEWAY"
+echo "${array_color[0]}${array_color[1]}RAM_TOTAL       = ${array_color[2]}${array_color[3]}$RAM_TOTAL"
+echo "${array_color[0]}${array_color[1]}RAM_USED        = ${array_color[2]}${array_color[3]}$RAM_USED"
+echo "${array_color[0]}${array_color[1]}RAM_FREE        = ${array_color[2]}${array_color[3]}$RAM_FREE"
+echo "${array_color[0]}${array_color[1]}SPACE_ROOT      = ${array_color[2]}${array_color[3]}$SPACE_ROOT"
+echo "${array_color[0]}${array_color[1]}SPACE_ROOT_USED = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED"
+echo "${array_color[0]}${array_color[1]}SPACE_ROOT_USED = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED"
+
 # # echo "${array_color[*]}"
 # # echo "${BLACK}I like bash"
 # echo "NOOOO it is the worst"
