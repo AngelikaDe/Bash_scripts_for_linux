@@ -7,7 +7,7 @@ echo "error. exit"
 exit 1
 fi
 
-echo "$(sh main_2.sh)"
+echo "$(sh info.sh)"
 
 file_name="$(date "+%d_%m_%Y_%H_%M_%S").ststus" 
 read -p "Do you want to save the information? [Y/N]" choice
