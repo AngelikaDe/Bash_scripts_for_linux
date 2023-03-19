@@ -20,14 +20,14 @@ then
 echo "Not enough arguments/to many. Plese enter 4 arguments and call the script again"
 exit 0
 fi
-for var in "$@"
-do
-    if ! [[ $var =~ '^[0-9]+$' ]];
-    then
-    echo "Please, enter all numbers and call the script again"
-    exit 0
-    fi
-done
+# for var in "$@"
+# do
+#     if ! [[ $var =~ '^[0-9]+$' ]];
+#     then
+#     echo "Please, enter all numbers and call the script again"
+#     exit 0
+#     fi
+# done
 if [ $1 -eq $2 ] ; then
     echo "Please, enter different numbers and call the script again"
 elif [ $3 -eq $4 ] ; then
