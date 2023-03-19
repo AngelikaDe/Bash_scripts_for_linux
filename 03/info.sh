@@ -1,4 +1,3 @@
-#!/bin/bash
 HOSTNAME=$(hostname | awk '{print $0}')
 TIMEZONE=$(timedatectl | grep 'Time zone' | awk '{print $3 $4 $5}')
 USER=$(whoami | awk '{print $0}')
