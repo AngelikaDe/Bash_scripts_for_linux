@@ -1,5 +1,5 @@
 #!/bin/bash
-#array_color=()
+array_color=("0" "0" "0" "0")
 fin="\033[0m"
 re="^[0-9]+$"
 black='\033[0;30m'
@@ -38,17 +38,17 @@ for var in "$@"
 do
     if [ $count -eq 0 ] || [ $count -eq 2 ] ; then
         case "$var" in
-        1) array_color+="$white"
+        1) array_color+=( "$white" )
             ;;
-        2) array_color+="$red" 
+        2) array_color+=( "$red" )
             ;;
-        3) array_color+="$green"
+        3) array_color+=( "$green" )
             ;;
-        4) array_color+="$blue"
+        4) array_color+=( "$blue" )
             ;;
-        5) array_color+="$purple"
+        5) array_color+=( "$purple" )
             ;;
-        6) array_color+="$black"
+        6) array_color+=( "$black" )
             ;;
         *) echo "UNKNOWN OPTION ${var}. End. Try again"
             exit 0
@@ -56,17 +56,17 @@ do
         esac
     else 
         case "$var" in
-        1) array_color+="$white_back"
+         1) array_color+=( "$white_back" )
             ;;
-        2) array_color+="$red_back"
+        2) array_color+=( "$red_back" )
             ;;
-        3) array_color+="$green_back"
+        3) array_color+=( "$green_back" )
             ;;
-        4) array_color+="$blue_back"
+        4) array_color+=( "$blue_back" )
             ;;
-        5) array_color+="$purple_back"
+        5) array_color+=( "$purple_back" )
             ;;
-        6) array_color+="$black_back"
+        6) array_color+=( "$black_back" )
             ;;
         *) echo "UNKNOWN OPTION ${var}. End. Try again"
             exit 0
