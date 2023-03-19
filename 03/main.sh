@@ -95,7 +95,7 @@ echo -e "${array_color[0]}${array_color[1]}RAM_USED        = ${array_color[2]}${
 echo -e "${array_color[0]}${array_color[1]}RAM_FREE        = ${array_color[2]}${array_color[3]}$RAM_FREE"
 echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT      = ${array_color[2]}${array_color[3]}$SPACE_ROOT"
 echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT_USED = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED"
-echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT_USED = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED"
+echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT_USED = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED$end"
 
 # # echo "${array_color[*]}"
 # # echo "${BLACK}I like bash"
