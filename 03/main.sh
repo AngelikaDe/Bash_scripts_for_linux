@@ -81,7 +81,7 @@ do
 done
 # echo "${array_color[*]}"
 
-echo -e "${array_color[0]}${array_color[1]}HOSTNAME        = ${array_color[2]}${array_color[3]}$HOSTNAME"
+echo -e "${array_color[0]}${array_color[1]}HOSTNAME       $fin = ${array_color[2]}${array_color[3]}$HOSTNAME$fin"
 echo -e "${array_color[0]}${array_color[1]}TIMEZONE        = ${array_color[2]}${array_color[3]}$TIMEZONE"
 echo -e "${array_color[0]}${array_color[1]}OS              = ${array_color[2]}${array_color[3]}$OS"
 echo -e "${array_color[0]}${array_color[1]}DATE            = ${array_color[2]}${array_color[3]}$DATE"
