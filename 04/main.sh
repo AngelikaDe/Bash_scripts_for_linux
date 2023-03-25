@@ -2,9 +2,9 @@
 source col.conf
 declare -a array_color=()
 declare -a array_numb=()
+declare -a color=()
 count=0
 
-array_name_colors=(black white red green purple)
 black='\033[0;30m'
 white='\033[0;37m'
 red='\033[0;31m'
@@ -45,11 +45,6 @@ if [ -z ${column2_font_color2} ]; then
     column2_font_color2=2
 fi
 array_numb[3]=$column2_font_color2
-
-# echo "${array_numb[@]}"
-
-# echo "${array_numb[2]}"
-# echo "${array_numb[3]}"
 
 for i in "${array_numb[@]}"
 do
@@ -92,19 +87,7 @@ do
     fi
     count=$((count+1))
 done
-# echo "${array_name_colors[2]}"
-# echo "${array_numb[@]}"
 echo ""
-color_1=${array_numb[0]}
-color_2=${array_numb[1]}
-color_3=${array_numb[2]}
-color_4=${array_numb[3]}
-
-# echo "Column 1 background = ${array_numb[0]} ("${array_name_color[$color_1]}")"
-# echo "YEES ${array_name_colors[$color_1]}"
-# # echo "The value of the test variable is: ${column1_background}"
-# # echo "${array_color[0]}${array_color[1]}HENLO $end=${array_color[2]}${array_color[3]} MY$end"
-# # echo "NOOOO it is the worst"
 
 echo -e "${array_color[0]}${array_color[1]}HOSTNAME$fin        = ${array_color[2]}${array_color[3]}$HOSTNAME $fin"
 echo -e "${array_color[0]}${array_color[1]}TIMEZONE$fin        = ${array_color[2]}${array_color[3]}$TIMEZONE $fin"
@@ -121,3 +104,34 @@ echo -e "${array_color[0]}${array_color[1]}RAM_FREE$fin        = ${array_color[2
 echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT$fin      = ${array_color[2]}${array_color[3]}$SPACE_ROOT $fin"
 echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT_USED$fin = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED $fin"
 echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT_USED$fin = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED$end $fin"
+
+for i in "${array_numb[@]}"
+do
+    case "$i" in
+        1) color+=( "white" )
+            ;;
+        2) color+=( "red" )
+            ;;
+        3) color+=( "green" )
+            ;;
+        4) color+=( "blue" )
+            ;;
+        5) color+=( "purple" )
+            ;;
+        6) color+=( "black" )
+            ;;
+    esac
+done
+echo ""
+if [ -s col.conf ]; then
+    echo "Column 1 background = ${array_numb[0]} (${color[0]})"
+    echo "Column 1 font color = ${array_numb[1]} (${color[1]})"
+    echo "Column 2 background = ${array_numb[2]} (${color[2]})"
+    echo "Column 2 font color = ${array_numb[3]} (${color[3]})"
+else
+    echo "Column 1 background = default (${color[0]})"
+    echo "Column 1 font color = default (${color[1]})"
+    echo "Column 2 background = default (${color[2]})"
+    echo "Column 2 font color = default (${color[3]})"
+
+fi
