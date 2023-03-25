@@ -1,0 +1,10 @@
+#  ./main.sh ../../Bash_scripts_for_linux/
+num_folders=$(ls -lR $1| grep ^d | wc | awk '{print $1}')
+folders_max_size=$(du -h $1| sort -hr | head -n 5 | cat -n | awk '{print $1" - "$3", "$2}')
+num_files=$(find $1 -type f| wc -l| awk '{print $1}')
+conf_files=$(find $1 -type f -name "*.conf" | wc -l | awk '{print $1}')
+text_files=$(find $1 -type f -name "*.text" | wc -l | awk '{print $1}')
+exec_files=$(find $1 -type f -name -executable | wc -l | awk '{print $1}')
+log_files=$(find $1 -type f -name "*.log" | wc -l | awk '{print $1}')
+arch_files=$(find $1 -regex '.*\(tar\|zip\|gz\|rar\)' | wc -l | awk '{print $1}')
+link_files=$(find $1 -type l | wc | awk '{print $1}')

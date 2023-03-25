@@ -6,7 +6,8 @@ then
 echo "error. exit"
 exit 1
 fi
-
+chmod +x ./info.sh
+./info.sh $1
 echo "$(sh info.sh)"
 
 file_name="$(date "+%d_%m_%Y_%H_%M_%S").ststus" 

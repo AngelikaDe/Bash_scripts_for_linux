@@ -19,6 +19,9 @@ blue_back="\033[104m"
 purple_back="\033[105m"
 black_back="\033[40m"
 
+chmod +x ./info.sh
+./info.sh $1
+
 source info.sh
 export $(cut -d= -f1 info.sh)
 

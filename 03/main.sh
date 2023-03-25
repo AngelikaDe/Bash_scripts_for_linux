@@ -17,6 +17,8 @@ blue_back="\033[104m"
 purple_back="\033[105m"
 black_back="\033[40m"
 source info.sh
+chmod +x ./info.sh
+./info.sh $1
 export $(cut -d= -f1 info.sh)
 
 if [ $# != 4 ] 
@@ -24,14 +26,14 @@ then
 echo "Not enough arguments/to many. Plese enter 4 arguments and call the script again"
 exit 0
 fi
-# for var in "$@"
-# do
-#     if ! [[ $var =~ '^[0-9]+$' ]];
-#     then
-#     echo "Please, enter all numbers and call the script again"
-#     exit 0
-#     fi
-# done
+for var in "$@"
+do
+    if ! [[ $var =~ '^[0-9]+$' ]];
+    then
+    echo "Please, enter all numbers and call the script again"
+    exit 0
+    fi
+done
 if [ $1 -eq $2 ] ; then
     echo "Please, enter different numbers and call the script again"
 elif [ $3 -eq $4 ] ; then
@@ -79,7 +81,6 @@ do
     fi
     count=$((count+1))
 done
-# echo "${array_color[*]}"
 
 echo -e "${array_color[0]}${array_color[1]}HOSTNAME$fin        = ${array_color[2]}${array_color[3]}$HOSTNAME $fin"
 echo -e "${array_color[0]}${array_color[1]}TIMEZONE$fin        = ${array_color[2]}${array_color[3]}$TIMEZONE $fin"
@@ -96,8 +97,3 @@ echo -e "${array_color[0]}${array_color[1]}RAM_FREE$fin        = ${array_color[2
 echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT$fin      = ${array_color[2]}${array_color[3]}$SPACE_ROOT $fin"
 echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT_USED$fin = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED $fin"
 echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT_USED$fin = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED$end $fin"
-
-# # echo "${array_color[*]}"
-# # echo "${BLACK}I like bash"
-# echo "NOOOO it is the worst"
-# echo "$(sh info.sh)"
