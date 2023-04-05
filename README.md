@@ -1,1 +1,0 @@
-# Bash_scripts_for_linux

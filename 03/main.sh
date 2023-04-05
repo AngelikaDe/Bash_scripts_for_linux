@@ -19,16 +19,16 @@ black_back="\033[40m"
 source info.sh
 chmod +x ./info.sh
 ./info.sh $1
-export $(cut -d= -f1 info.sh)
+# export $(cut -d= -f1 info.sh)
 
 if [ $# != 4 ] 
 then
 echo "Not enough arguments/to many. Plese enter 4 arguments and call the script again"
 exit 0
 fi
-for var in "$@"
+for var in "$1" "$2" "$3" "$4"
 do
-    if ! [[ $var =~ '^[0-9]+$' ]];
+    if [[ $var != [1-6] ]];
     then
     echo "Please, enter all numbers and call the script again"
     exit 0
@@ -96,4 +96,4 @@ echo -e "${array_color[0]}${array_color[1]}RAM_USED$fin        = ${array_color[2
 echo -e "${array_color[0]}${array_color[1]}RAM_FREE$fin        = ${array_color[2]}${array_color[3]}$RAM_FREE $fin"
 echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT$fin      = ${array_color[2]}${array_color[3]}$SPACE_ROOT $fin"
 echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT_USED$fin = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED $fin"
-echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT_USED$fin = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED$end $fin"
+echo -e "${array_color[0]}${array_color[1]}SPACE_ROOT_FREE$fin = ${array_color[2]}${array_color[3]}$SPACE_ROOT_USED$end $fin"

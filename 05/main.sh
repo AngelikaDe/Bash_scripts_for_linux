@@ -1,3 +1,4 @@
+#!/bin/bash
 source info.sh
 start=`date +%s`
 
@@ -27,7 +28,7 @@ echo "Symbolic links = $link_files"
 echo "TOP 10 files of maximum size arranged in descending order (path, size and type):"
 for i in {1..10}
   do
-    files_max_size=$(find $1 -type f -exec du -h {} + | sort -rh | head -n 10 | sed "${i}q;d" )
+    files_max_size=$(sudo find $1 -type f -exec du -h {} + | sort -rh | head -n 10 | sed "${i}q;d" )
     if [ -z "$files_max_size" ]; then 
       echo "No such files"
       break
@@ -39,7 +40,7 @@ for i in {1..10}
 echo "TOP 10 executable files of the maximum size arranged in descending order (path, size and MD5 hash of file):"
 for i in {1..10}
   do
-  exec_files_top=$(find $1 -type f -name -executable -exec du -h {} + | sort -rh | head -n 10 | sed "${i}q;d" )
+  exec_files_top=$(sudo find $1 -type f -name -executable -exec du -h {} + | sort -rh | head -n 10 | sed "${i}q;d" )
       if [ -z "$exec_files_top" ]; then 
       echo "No such files"
       break
