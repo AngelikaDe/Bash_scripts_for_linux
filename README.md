@@ -1,5 +1,5 @@
-
-
+# Linux Monitoring
+Linux basic bash scripting and system research.
 ## Part 1
 The script is run with one parameter. It is a text parameter.  
 The script outputs the value of the parameter.  
